@@ -62,7 +62,6 @@ public class linefollower extends Thread {
     }
 
     private void followLine(int lineValue) {
-    	Sound.playSample(new File ("Mortal Kombat(1).wav"), Sound.VOL_MAX);
         if (lineValue < COLOR_INTENSITY_THRESHOLD) {
             // Turn left
             leftMotor.setSpeed(100);
