@@ -1,3 +1,5 @@
+//Code for the obstacle avoidance 
+
 package LeJos;
 
 import lejos.hardware.port.SensorPort;
