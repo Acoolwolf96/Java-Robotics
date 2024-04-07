@@ -1,3 +1,4 @@
+//Code for the color sensor
 package LeJos;
 
 import lejos.hardware.port.SensorPort;
