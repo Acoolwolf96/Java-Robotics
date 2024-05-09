@@ -24,4 +24,24 @@ public class RobotDataHandler {
 
 
 
+    private LejosData retrieveDataFromDatabase() {
+        String query = "SELECT leftMotor, rightMotor, securityDistance, lineColor FROM lejos_data ORDER BY id DESC LIMIT 1";
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                return new LejosData(rs.getInt("leftMotor"), rs.getInt("rightMotor"),
+                        rs.getInt("securityDistance"), rs.getInt("lineColor"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    }
+
+
+
 }
