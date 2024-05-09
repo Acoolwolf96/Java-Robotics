@@ -8,6 +8,19 @@ import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
 
 
+public class RobotDataHandler {
+
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/robotdb";
+    private static final String USER = "username";
+    private static final String PASS = "password";
+
+    public static void main(String[] args) {
+        RobotDataHandler handler = new RobotDataHandler();
+        LejosData data = handler.retrieveDataFromDatabase();
+        if (data != null) {
+            handler.sendDataToRobot(data);
+        }
+    }
 
 
 
